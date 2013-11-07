@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/cygdrive/c/wamp/www/todomvc'
+let g:netrw_dirhist_2='/home/I303035'
+let g:netrw_dirhist_3='/home/I303035/winosu'
+let g:netrw_dirhist_4='/home/I303035'
+let g:netrw_dirhist_5='/home/I303035/.vim'
