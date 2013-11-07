@@ -218,12 +218,10 @@ nmap <C-W><C-F> :FirstExplorerWindow<cr>
 nmap <C-W><C-B> :BottomExplorerWindow<cr>
 nmap <silent> <leader>wm :WMToggle<cr> 
 "设置界面分割  
-nmap <silent> wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>  
 "nmap <C-w><C-f> :FirstExplorerWindow<cr>   " 切换到最上面一个窗格
 "nmap <C-w><C-b> :BottomExplorerWindow<cr> " 切换到最下面一个窗格
 nmap <C-W><C-F> :FirstExplorerWindow<cr>
 nmap <C-W><C-B> :BottomExplorerWindow<cr>
-nmap <silent> <F8> :WMToggle<cr>
 let g:netrw_winsize = 30
 nmap <silent> <leader>fe :Sexplore!<cr>
 nmap wm :WMToggle<cr>    " 是nomal模式的命令，不是Ex模式的
@@ -235,14 +233,13 @@ nmap wm :WMToggle<cr>    " 是nomal模式的命令，不是Ex模式的
 "}
 "-----------------------------------------------------------------
 " plugin - taglist.vim  查看函数列表，需要ctags程序
-" F3 打开隐藏taglist窗口
+" F4 打开隐藏taglist窗口
 "-----------------------------------------------------------------
 if MySys() == "windows"                " 设定windows系统中ctags程序的位置
     let Tlist_Ctags_Cmd = '"'.$VIMRUNTIME.'/ctags.exe"'
 elseif MySys() == "linux"              " 设定windows系统中ctags程序的位置
     let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 endif
-nnoremap <silent><F3> :TlistToggle<CR>
 "let Tlist_Show_One_File = 1            " 不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow = 1          " 如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window = 1         " 在右侧窗口中显示taglist窗口
@@ -280,9 +277,10 @@ let NERDTreeWinSize= 29
 " u 打开上层目录                 m 显示文件系统菜单（添加、删除、移动操作）
 " r 递归刷新当前目录             R 递归刷新当前根目录
 "-----------------------------------------------------------------
-" F3 NERDTree 切换
+" F3 NERDTree/winmanager 切换
 map <F3> :NERDTreeToggle<CR>
 imap <F3> <ESC>:NERDTreeToggle<CR>
+map	<F3> :NERDTreeToggle<BAR>WMToggle <CR>
 
 
 "-----------------------------------------------------------------
@@ -370,9 +368,7 @@ set mouse=a
 " 快速重载配置文件
 map <leader>s :source ~/.vimrc<cr> 
 map <leader>e :e! ~/.vimrc<cr>
-map <F3> :NERDTreeToggle<CR>
 map <space><left> <esc>:NERDTree<CR> "regenerate NERDTree
-map <F4> :Tlist<CR>
 "map <space><right> <esc>:Tlist<CR>
 map <F5> :!cmd &<CR>
 map <tab><left> <ESC>:q!<return>
