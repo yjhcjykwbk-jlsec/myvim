@@ -212,7 +212,7 @@ let g:pydiction_menu_height = 20
 " winManager setting
 """"""""""""""""""""""""""""""
 let g:winManagerWindowLayout = "BufExplorer|TagList"
-let g:winManagerWidth = 24
+let g:winManagerWidth = 30
 let g:defaultExplorer = 1
 nmap <C-W><C-F> :FirstExplorerWindow<cr>
 nmap <C-W><C-B> :BottomExplorerWindow<cr>
@@ -244,18 +244,19 @@ endif
 let Tlist_Exit_OnlyWindow = 1          " 如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window = 1         " 在右侧窗口中显示taglist窗口
 let Tlist_File_Fold_Auto_Close=1       " 自动折叠当前非编辑文件的方法列表
-"let Tlist_Use_SingleClick= 1         " 缺省情况下，在双击一个tag时，才会跳到该tag定义的位置
+let Tlist_Use_SingleClick= 1         " 缺省情况下，在双击一个tag时，才会跳到该tag定义的位置
 "let Tlist_Process_File_Always=1 "taglist始终解析文件中的tag，不管taglist窗口有没有打开
 let Tlist_Auto_Open = 0
 let Tlist_Auto_Update = 1
 let Tlist_Hightlight_Tag_On_BufEnter = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Process_File_Always = 1
-let Tlist_Display_Prototype = 0
-let Tlist_Compact_Format = 1
+"let Tlist_Display_Prototype = 0
+"let Tlist_Compact_Format = 1
 let Tlist_File_Fold_Auto_Close=1 "同时显示多个文件中的tag时，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来。
-let Tlist_WinWidth = 23 " 40 cols wide
-let NERDTreeWinSize= 29
+let Tlist_Show_Menu=1
+"let Tlist_WinWidth = 23 " 40 cols wide
+let NERDTreeWinSize= 30
 
 "-----------------------------------------------------------------
 " plugin - mark.vim 给各种tags标记不同的颜色，便于观看调式的插件。
