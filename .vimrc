@@ -211,7 +211,8 @@ let g:pydiction_menu_height = 20
 """"""""""""""""""""""""""""""
 " winManager setting
 """"""""""""""""""""""""""""""
-let g:winManagerWindowLayout = "BufExplorer|TagList"
+"let g:winManagerWindowLayout = "BufExplorer|TagList"
+let g:winManagerWindowLayout = "TagList"
 let g:winManagerWidth = 30
 let g:defaultExplorer = 1
 nmap <C-W><C-F> :FirstExplorerWindow<cr>
@@ -236,7 +237,7 @@ nmap wm :WMToggle<cr>    " 是nomal模式的命令，不是Ex模式的
 " F4 打开隐藏taglist窗口
 "-----------------------------------------------------------------
 if MySys() == "windows"                " 设定windows系统中ctags程序的位置
-    let Tlist_Ctags_Cmd = '"'.$VIMRUNTIME.'/ctags.exe"'
+    let Tlist_Ctags_Cmd = '"'.$V9MRUNTIME.'/ctags.exe"'
 elseif MySys() == "linux"              " 设定windows系统中ctags程序的位置
     let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 endif
@@ -279,9 +280,12 @@ let NERDTreeWinSize= 30
 " r 递归刷新当前目录             R 递归刷新当前根目录
 "-----------------------------------------------------------------
 " F3 NERDTree/winmanager 切换
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC>:NERDTreeToggle<CR>
+"map <F3> :NERDTreeToggle<CR>
+"imap <F3> <ESC>:NERDTreeToggle<CR>
 map	<F3> :NERDTreeToggle<BAR>WMToggle <CR>
+map	<F2> :colorscheme autumnleaf <CR>
+map	<F4> :colorscheme blacksea <CR>
+map	<F9> :colorscheme baycomb <CR>
 
 
 "-----------------------------------------------------------------
@@ -369,8 +373,8 @@ set mouse=a
 " 快速重载配置文件
 map <leader>s :source ~/.vimrc<cr> 
 map <leader>e :e! ~/.vimrc<cr>
-map <space><left> <esc>:NERDTree<CR> "regenerate NERDTree
-"map <space><right> <esc>:Tlist<CR>
+map <space><left> <esc>:NERDTreeToggle<CR>
+map <space><right> <esc>:Tlist<CR>
 map <F5> :!cmd &<CR>
 map <tab><left> <ESC>:q!<return>
 map <tab><right> <ESC>:w!<return>
@@ -445,18 +449,18 @@ nmap A <esc>:<cr>  "原本是行尾添加,可以用$a替代
 nmap O <esc>:<cr>  "本是光标上面添加一行，可以用shift+o替代
 nmap <S-j> <esc>:<cr> "shift+j=J，只用后者即可
 nmap <S-k> <esc>:<cr> "shift+k不用
-nmap H <esc>:<cr>
+"nmap H <esc>:<cr>
 nmap K <esc>:<cr> 
 nmap J <esc>:<cr> 
-nmap L <esc>:<cr>
+"nmap L <esc>:<cr>
 nmap r <esc>:<cr>  "不要替换模式
 nmap s <esc>:<cr>  "不要替换模式
 nmap R <esc>:<cr> 
 nmap u <esc>:<cr>  “ctrl z代替u
 nmap U <esc>:<cr>  “ctrl z代替u
 nmap S <esc>:echo<cr>   
-map  Q <Nop>
-  "原本是删除行并且插入，可以用ddo或者dd<S-o>或者cc替代。现在用来向下翻页
+map  Q <Nop>    
+"原本是删除行并且插入，可以用ddo或者dd<S-o>或者cc替代。现在用来向下翻页
 nmap <F1> :<CR>
 "}
 "}
