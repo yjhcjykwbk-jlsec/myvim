@@ -188,6 +188,34 @@ autocmd FileType python map <F12> :!python %<CR>
 
 " 选中状态下 Ctrl+c 复制
 vmap <C-c> "+y
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+"
+" " CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+"
+" " CTRL-V and SHIFT-Insert are Paste
+map <C-V>     "+gP
+map <S-Insert>    "+gP
+"
+cmap <C-V>    <C-R>+
+cmap <S-Insert>   <C-R>+
+"
+" " Pasting blockwise and linewise selections is not possible in Insert and
+" " Visual mode without the +virtualedit feature.  They are pasted as if they
+" " were characterwise instead.
+" " Uses the paste.vim autoload script.
+"
+" exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+" exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+"
+imap <S-Insert>   <C-V>
+vmap <S-Insert>   <C-V>
+"
+" " Use CTRL-Q to do what CTRL-V used to do
+noremap <C-Q>     <C-V>
 
 " 打开javascript折叠
 let b:javascript_fold=1
@@ -285,7 +313,7 @@ let NERDTreeWinSize= 30
 map	<F3> :NERDTreeToggle<BAR>WMToggle <CR>
 map	<F2> :colorscheme autumnleaf <CR>
 map	<F4> :colorscheme blacksea <CR>
-map	<F9> :colorscheme baycomb <CR>
+map	<F10> :colorscheme baycomb <CR>
 
 
 "-----------------------------------------------------------------
@@ -368,8 +396,6 @@ smap <silent> <C-e> <Plug>(neocomplcache_snippets_expand)
 "-----------------------------------------------------------------
 "my options
 "-----------------------------------------------------------------
-" 一直启动鼠标
-set mouse=a
 " 快速重载配置文件
 map <leader>s :source ~/.vimrc<cr> 
 map <leader>e :e! ~/.vimrc<cr>
@@ -486,3 +512,7 @@ set ruler           " 在编辑过程中，在右下角显示光标位置的状态行
 "}
 
 "}
+" 一直启动鼠标
+set mouse=a
+"从插入模式进入插入粘贴模式
+set pastetoggle=<F9>
