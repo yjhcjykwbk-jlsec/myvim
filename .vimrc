@@ -73,11 +73,11 @@ set cmdheight=1             " 设定命令行的行数为 1
 set laststatus=2            " 显示状态栏 (默认值为 1, 无法显示状态栏)
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
                             " 设置在状态行显示的信息
-set foldenable              " 开始折叠
+"set foldenable              " 开始折叠
 set foldmethod=marker       " 设置语法折叠syntax or marker
 set foldmarker={,}          " if fold marker
 set foldcolumn=0            " 设置折叠区域的宽度
-setlocal foldlevel=1        " 设置折叠层数为
+setlocal foldlevel=0        " 设置折叠层数为
 " set foldclose=all           " 设置为自动关闭折叠                            
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
                             " 用空格键来开关折叠
@@ -313,7 +313,7 @@ let NERDTreeWinSize= 30
 map	<F3> :NERDTreeToggle<BAR>WMToggle <CR>
 map	<F2> :colorscheme autumnleaf <CR>
 map	<F4> :colorscheme blacksea <CR>
-map	<F10> :colorscheme baycomb <CR>
+map	<F12> :colorscheme baycomb <CR>
 
 
 "-----------------------------------------------------------------
@@ -516,3 +516,6 @@ set ruler           " 在编辑过程中，在右下角显示光标位置的状态行
 set mouse=a
 "从插入模式进入插入粘贴模式
 set pastetoggle=<F9>
+
+set tags=tags;
+set autochdir 
