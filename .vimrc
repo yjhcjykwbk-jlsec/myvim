@@ -520,6 +520,9 @@ set pastetoggle=<F9>
 set tags=tags;
 set autochdir 
 
+
+".2014.8.7
+nnoremap <leader>pyc :%s/\t/\ \ \ \ /g<cr>
 func CodeFormat()
   "取得当前光标所在行号
   let lineNum = line(".")
